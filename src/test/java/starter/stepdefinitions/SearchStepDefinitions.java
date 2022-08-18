@@ -19,7 +19,7 @@ public class SearchStepDefinitions {
     public void researchingThings(Actor actor) throws Exception {
         actor.wasAbleTo(NavigateTo.theWikipediaHomePage());
         ListOfWebElementFacades article_title = GuardianNewsHomePage.NEWS_TITLES.resolveAllFor(actor);
-        ListOfWebElementFacades article_title2 = (ListOfWebElementFacades) actor.asksFor(GuardianNewsHomePage.getAllTheVisibleElements(actor));
+        ListOfWebElementFacades article_title2 = (ListOfWebElementFacades) actor.asksFor(GuardianNewsHomePage.getAllTheVisibleElements());
         int article_title_old_style = GuardianNewsHomePage.getHeadlinesCount();
         assertThat(article_title_old_style).isGreaterThan(0);
         assertThat(article_title.size()).isGreaterThan(0);
